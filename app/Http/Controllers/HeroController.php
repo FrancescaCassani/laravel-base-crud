@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Hero;
 
 class HeroController extends Controller
 {
@@ -13,7 +14,12 @@ class HeroController extends Controller
      */
     public function index()
     {
-        //
+        //Get data from DB
+        $heroes = Hero::all();
+        //dd($heroes);
+
+        //Indico la rotta di destinazione utilizzando il route:list e uso il compact() per portare nella rotta i miei dati
+        return view('heroes.index', compact('heroes'));
     }
 
     /**

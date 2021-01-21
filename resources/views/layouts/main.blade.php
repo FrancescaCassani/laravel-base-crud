@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Laravel</title>
         <!-- Fonts -->
-        <link rel="stylesheet" href="href="{{ asset('css/app.css')}}”>
+        <link rel="stylesheet" href="{{ asset('css/app.css')}}">
 
     </head>
 
@@ -13,7 +13,9 @@
 
         @include('partials.header')
 
-        @yield('content')
+        <main>
+            @yield('content')
+        </main>
 
         @include('partials.footer')
     </body>

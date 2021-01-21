@@ -1,0 +1,86 @@
+//WRAPPERS
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+
+.no-list {
+    text-decoration: none;
+    list-style: none;
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+//FLEX
+.flex {
+    display: flex;
+}
+
+.text-end {
+    text-align: end;
+}
+
+.a-c {
+    align-items: center;
+}
+
+.a-content {
+    align-content: center;
+}
+
+.jc-center {
+    justify-content: center;
+}
+
+.jc-between {
+    justify-content: space-between;
+}
+
+.jc-end {
+    justify-content: end;
+}
+
+
+
+
+// SPACERS
+@each $size in 0, 1, 2, 3, 4, 5, 6, 8 {
+    .mt-#{$size} {
+        margin-top: $size + 0rem;
+    }
+    .pt-#{$size} {
+        padding-top: $size + 0rem;
+    }
+    .mb-#{$size} {
+        margin-bottom: $size + 0rem;
+    }
+    .pb-#{$size} {
+        padding-bottom: $size + 0rem;
+    }
+    .pr-#{$size} {
+        padding-right: $size + 0rem;
+    }
+    .mr-#{$size} {
+        margin-right: $size + 0rem;
+    }
+    .pl-#{$size} {
+        padding-left: $size + 0rem;
+    }
+}
+
+
+.btn {
+    background: #1abc9c;
+    border: 1px solid white;
+    width: 160px;
+    line-height: 30px;
+    border-radius: 15px;
+    a {
+        color: white;
+    }
+}

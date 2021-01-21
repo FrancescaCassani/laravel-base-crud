@@ -13,4 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+/**HOMEPAGE*/
 Route::get('/', 'HomeController@index')->name('home');
+
+
+/**HEROES */
+Route::resource('heroes', 'HeroController');
