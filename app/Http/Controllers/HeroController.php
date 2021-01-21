@@ -29,7 +29,7 @@ class HeroController extends Controller
      */
     public function create()
     {
-        //
+        return view('heroes.create');
     }
 
     /**
@@ -38,9 +38,35 @@ class HeroController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request) //istanza che ci fa accedere ai dati dentro la form
     {
-        //
+        $data = $request->all();
+        //dd($data);
+
+
+        //Valido i dati ricevuti come array con indici associativi
+        $request->validate([
+            'name' => 'required|unique:heroes|max:20',
+            'symbol' => 'required',
+            'description' => 'required'
+        ]);
+
+
+        //Salvo il dato nel DB
+        $hero = new Hero();
+        $hero->name = $data['name'];
+        $hero->symbol = $data['symbol'];
+        $hero->description = $data['description'];
+
+
+        //Se tutto ok mi ritornerà un true
+        $saved = $hero->save();
+
+
+        //Confermati i dati e se sono true, rimando alla rotta
+        if ($saved) {
+            return redirect()->route('heroes.show', $hero->id);
+        }
     }
 
     /**

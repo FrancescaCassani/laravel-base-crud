@@ -1,6 +1,8 @@
 @extends('layouts.main')
 
 @section('content')
+
+{{-- http://127.0.0.1:8000/heroes --}}
     <div class="wrapper">
         <ul class="no-list heroes-list">
             <li class="heroes">
