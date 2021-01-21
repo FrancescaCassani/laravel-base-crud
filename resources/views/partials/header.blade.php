@@ -17,7 +17,7 @@
                         <a href="{{route('heroes.index')}}">Heroes</a>
                     </li>
                     <li class="pr-2">
-                        <a href="">Add your hero</a>
+                        <a href="{{route('heroes.create')}}">Add your hero</a>
                     </li>
                 </ul>
             </div>
