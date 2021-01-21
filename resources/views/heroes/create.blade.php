@@ -16,24 +16,25 @@
     @endif
 
     {{-- Lo faccio puntare alla rotta .store in quanto utlizzando il metodo POST serve per salvare le informazioni --}}
-    <form action="{{route('heroes.store')}}" method="POST">
+    <form class="info mini-wrapper" action="{{route('heroes.store')}}" method="POST">
         @csrf
         @method('POST')
 
-        <div class="form-group">
+        <div class="form-group mt-2 mb-2">
             <label for="name">Nome dell'eroe</label>
-            <input type="text" name="name" value="{{old('name')}}">
+            <input type="text" name="name" value="{{old('name')}}" placeholder="Nome dell'eroe">
         </div>
 
-        <div class="form-group">
+        <div class="form-group  mt-2 mb-2">
             <label for="symbol">Il simbolo dell'eroe</label>
-            <input type="text" name="symbol" value="{{old('symbol')}}">
+            <input type="text" name="symbol" value="{{old('symbol')}}"
+            placeholder="Simbolo dell'eroe">
         </div>
 
-        <div class="form-group">
+        <div class="form-group  mt-2 mb-2">
             <label for="description">Descrizione dell'eroe</label>
-            <textarea name="description">{{old('description')}}</textarea>
-            <input type="submit" value="Create">
+            <textarea name="description">{{old('description')}} </textarea>
+            <input class="mt-2 btn" type="submit" value="Create">
         </div>
 
 
